@@ -28,14 +28,14 @@
 // app.use("/api/v1", payment);
 
 
-// app.use(Express.static(path.join(__dirname, "../frontend/build")));
+// // app.use(Express.static(path.join(__dirname, "../frontend/build")));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-// });
+// // app.get("*", (req, res) => {
+// //   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+// // });
 
 // //Middleware for errors
 // app.use(errorMiddleware);
 
 
-module.exports = app
+// module.exports = app
