@@ -22,17 +22,18 @@ const order = require("./routes/orderRoute");
 const payment = require("./routes/paymentRouter");
 
 
+ 
 app.use("/api/v1",product);
 app.use("/api/v1",user);
 app.use("/api/v1", order);
-app.use("/api/v1", payment);
+//app.use("/api/v1", payment);
 
 
-app.use(Express.static(path.join(__dirname, "../frontend/build")));
+// app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+// });
 
 //Middleware for errors
 app.use(errorMiddleware);
@@ -49,7 +50,7 @@ process.on("uncaughtException", (err)=>{
 //config
 dotenv.config({path:"./config/config.env"});
 
-
+console.log(process.env.RAZOR_PAY_ID);
 //connect to database
  connectDatabase();
  

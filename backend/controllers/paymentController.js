@@ -1,9 +1,14 @@
 const razorpay = require('razorpay');
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config/config.env" });
 
-dotenv.config({ path: 'backend/config/config.env' });
+
+
+
+ 
 
 const instance = new razorpay({
+    
     key_id: process.env.RAZOR_PAY_ID,
     key_secret: process.env.RAZOR_PAY_SECRET_KEY
 });
@@ -29,7 +34,9 @@ exports.checkout = async (req, res) => {
 }
 
 exports.getKey = async (req, res) => {
+    
     res.status(200).json({
+        
         key: process.env.RAZOR_PAY_ID
     })
 }
